@@ -11,18 +11,8 @@
 Let's use the [search](https://developer.foursquare.com/docs/venues/search) venue API to find a place to grab some coffee. Read through the documentation and use Postman to construct an API call to find coffee shops near you.
 
 We want to pass parameters of `near` and `query`, along with our `client_secret`, `client_id`, and `v` parameters.
-
-If we did it right, we should get a JSON response with an array of `venues`, each of which should conform to the [venue](https://developer.foursquare.com/docs/responses/venue) documentation.
-
 Great! Now that we know how to query the API and get the results we want with Postman, how do we actually do this in code?
 
-We're going to use [Faraday](https://github.com/lostisland/faraday) to access the Foursquare API from our Rails application. The basic app is set up, and you can code along as we add the feature to search for nearby coffee shops.
-
-### Faraday
-
-Faraday is an HTTP client library that abstracts and standardizes some lower-level HTTP functions and makes it easy to build requests and get responses from an API.
-
-**Advanced:** In this lesson, and indeed in most cases, you'll use the built-in [Net::HTTP](http://ruby-doc.org/stdlib-2.3.0/libdoc/net/http/rdoc/Net/HTTP.html) library for HTTP functions. However, other libraries offer different advantages in categories like performance ([Patron](http://toland.github.io/patron/)) or multi-threading capability ([Typhoeus](https://github.com/typhoeus/typhoeus#readme)). Using a library like Faraday, which wraps and abstracts these lower-level libraries, allows you to maintain the same client code even if you change the underlying library later.
 
 Add Faraday to the `Gemfile` and run `bundle install`:
 
